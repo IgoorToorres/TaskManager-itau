@@ -1,9 +1,13 @@
 package dio.taskmanager.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.util.Assert;
 
 import java.util.Optional;
 
+@Getter
+@Setter
 public class Task {
     private TaskId id;
     private String title;

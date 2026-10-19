@@ -3,9 +3,11 @@ package dio.taskmanager.infrastructure.repository;
 import dio.taskmanager.domain.Task;
 import dio.taskmanager.domain.TaskId;
 import dio.taskmanager.domain.TaskRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class InMemoryTaskRepository implements TaskRepository {
     private final Map<TaskId, Task> storage = new HashMap<>();
 

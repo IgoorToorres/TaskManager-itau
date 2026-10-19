@@ -32,8 +32,7 @@ public abstract class TaskRepositoryTest {
     void shouldSaveAndFindTaskById() {
         Task task = new Task(
                 "Implementar testes do repositório",
-                Optional.of("Criar testes de contrato reutilizáveis"),
-                TaskStatus.PENDING
+                Optional.of("Criar testes de contrato reutilizáveis")
         );
 
         Task savedTask = repository.save(task);
@@ -58,8 +57,8 @@ public abstract class TaskRepositoryTest {
 
     @Test
     void shouldFindAllSavedTasks() {
-        Task firstTask = new Task("Primeira tarefa", Optional.empty(), TaskStatus.PENDING);
-        Task secondTask = new Task("Segunda tarefa", Optional.empty(), TaskStatus.PENDING);
+        Task firstTask = new Task("Primeira tarefa", Optional.empty());
+        Task secondTask = new Task("Segunda tarefa", Optional.empty());
         repository.save(firstTask);
         repository.save(secondTask);
 
@@ -72,13 +71,12 @@ public abstract class TaskRepositoryTest {
 
     @Test
     void shouldReplaceTaskWhenSavingTheSameId() {
-        Task originalTask = new Task("Título original", Optional.empty(), TaskStatus.PENDING);
+        Task originalTask = new Task("Título original", Optional.empty());
         repository.save(originalTask);
 
         Task updatedTask = new Task(
                 "Título atualizado",
-                Optional.of("Descrição atualizada"),
-                TaskStatus.COMPLETED
+                Optional.of("Descrição atualizada")
         );
         updatedTask.setId(originalTask.getId());
         updatedTask.setStatus(TaskStatus.COMPLETED);
@@ -97,7 +95,7 @@ public abstract class TaskRepositoryTest {
 
     @Test
     void shouldDeleteTaskById() {
-        Task task = new Task("Tarefa a excluir", Optional.empty(), TaskStatus.PENDING);
+        Task task = new Task("Tarefa a excluir", Optional.empty());
         repository.save(task);
 
         repository.delete(task.getId());

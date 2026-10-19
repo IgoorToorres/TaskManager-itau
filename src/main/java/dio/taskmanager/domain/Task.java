@@ -14,7 +14,7 @@ public class Task {
     private Optional<String> description;
     private TaskStatus status;
 
-    public Task(String title, Optional<String> description, TaskStatus status){
+    public Task(String title, Optional<String> description){
         Assert.notNull(title, "Title must not be null");
 
         this.id = new TaskId();

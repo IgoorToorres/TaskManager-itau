@@ -5,7 +5,9 @@ import dio.taskmanager.application.output.TaskOutput;
 import dio.taskmanager.domain.TaskId;
 import dio.taskmanager.domain.TaskNotFoundException;
 import dio.taskmanager.domain.TaskRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UpdateTaskUseCase {
     private final TaskRepository repository;
 

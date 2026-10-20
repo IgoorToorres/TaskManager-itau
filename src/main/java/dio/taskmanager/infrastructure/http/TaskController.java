@@ -6,6 +6,7 @@ import dio.taskmanager.domain.TaskId;
 import dio.taskmanager.infrastructure.http.request.CreateTaskRequest;
 import dio.taskmanager.infrastructure.http.request.UpdateTaskRequest;
 import dio.taskmanager.infrastructure.http.response.TaskResponse;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,7 @@ public class TaskController {
 
 
     @PostMapping
-    public TaskResponse create(@RequestBody CreateTaskRequest request) {
+    public TaskResponse create(@RequestBody @Valid CreateTaskRequest request) {
         var output = createTaskUseCase.execute(request.toInput());
         return TaskResponse.from(output);
     }
@@ -60,7 +61,7 @@ public class TaskController {
     }
 
     @PatchMapping("/{id}")
-    public TaskResponse update(@PathVariable UUID id, @RequestBody UpdateTaskRequest request){
+    public TaskResponse update(@PathVariable UUID id, @RequestBody @Valid UpdateTaskRequest request){
         var input = request.toInput();
         var output = updateTaskUseCase.execute(new TaskId(id), input);
         return TaskResponse.from(output);

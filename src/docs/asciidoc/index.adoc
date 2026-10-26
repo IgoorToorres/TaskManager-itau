@@ -1,0 +1,78 @@
+= Task Manager API
+:toc: left
+:toclevels: 2
+:sectanchors:
+
+Esta documentação é gerada a partir dos testes de contrato HTTP da aplicação.
+
+== Criar tarefa
+
+include::{snippets}/tasks-create/http-request.adoc[]
+
+include::{snippets}/tasks-create/request-fields.adoc[]
+
+include::{snippets}/tasks-create/http-response.adoc[]
+
+include::{snippets}/tasks-create/response-fields.adoc[]
+
+== Listar tarefas
+
+include::{snippets}/tasks-list/http-request.adoc[]
+
+include::{snippets}/tasks-list/http-response.adoc[]
+
+include::{snippets}/tasks-list/response-fields.adoc[]
+
+== Buscar tarefa por ID
+
+include::{snippets}/tasks-get-by-id/path-parameters.adoc[]
+
+include::{snippets}/tasks-get-by-id/http-request.adoc[]
+
+include::{snippets}/tasks-get-by-id/http-response.adoc[]
+
+include::{snippets}/tasks-get-by-id/response-fields.adoc[]
+
+== Atualizar tarefa
+
+include::{snippets}/tasks-update/path-parameters.adoc[]
+
+include::{snippets}/tasks-update/http-request.adoc[]
+
+include::{snippets}/tasks-update/request-fields.adoc[]
+
+include::{snippets}/tasks-update/http-response.adoc[]
+
+include::{snippets}/tasks-update/response-fields.adoc[]
+
+== Excluir tarefa
+
+include::{snippets}/tasks-delete/path-parameters.adoc[]
+
+include::{snippets}/tasks-delete/http-request.adoc[]
+
+include::{snippets}/tasks-delete/http-response.adoc[]
+
+== Erros
+
+=== Tarefa inexistente
+
+include::{snippets}/tasks-get-not-found/http-request.adoc[]
+
+include::{snippets}/tasks-get-not-found/http-response.adoc[]
+
+=== Criação inválida
+
+include::{snippets}/tasks-create-validation-error/http-request.adoc[]
+
+include::{snippets}/tasks-create-validation-error/http-response.adoc[]
+
+include::{snippets}/tasks-create-validation-error/response-fields.adoc[]
+
+=== Atualização inválida
+
+include::{snippets}/tasks-update-validation-error/http-request.adoc[]
+
+include::{snippets}/tasks-update-validation-error/http-response.adoc[]
+
+include::{snippets}/tasks-update-validation-error/response-fields.adoc[]
